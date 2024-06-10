@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERAAAAAAAAERAQAAAAAAEBEAEAAAAAEAEQABAAAAEAARAAAQAAEAABEAAAEAEAAAEQAAABEAAAARAAAAEQAAABEAAAEAEAAAEQAAEAABAAARAAEAAAAQABEAEAAAAAEAEQEAAAAAABAREAAAAAAAAREREREREREREAAAAAP/wAAF/6AABv9gAAd+4AAHveAAB9vgAAfn4AAH5+AAB9vgAAe94AAHfuAABv9gAAX/oAAD/8AAAAAAAA" rel="icon" type="image/x-icon">
+      <title>Yappy   Bird</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      
+      <!-- Style sheets -->
+      <link href="css/reset.css" rel="stylesheet">
+      <link href="css/main.css" rel="stylesheet">
+       <script>
+         const WS_URL = window.location.hostname === 'localhost' ? 'http://localhost:8000' : 'wss://yappybird.langai.dev';
+      </script>
+      
+   </head>
+   <body>
+      <div id="gamecontainer">
+         <div id="gamescreen">
+            <div id="sky" class="animated">
+               <div id="flyarea">
+                  <div id="ceiling" class="animated"></div>
+                  <!-- This is the flying and pipe area container -->
+                  <div id="player" class="bird animated"></div>
+
+                  <div id="bigscore"></div>
+
+                  <div id="splash">
+                     <!-- 1. (Instruct mic placement).<br/>
+                     2. Say "UP" to flap.<br/>
+                     3. Say "UP" to begin the game.<br/> -->
+                  </div>
+
+                  <div id="scoreboard">
+                     <div id="medal"></div>
+                     <div id="currentscore"></div>
+                     <div id="highscore"></div>
+                     <div id="replay"><img src="assets/replay.png" alt="replay"></div>
+                  </div>
+                  <div id="name-input" class="modal">
+                     <div class="modal-content">
+                       <h2 class="modal-title">Enter Your Name</h2>
+                       <input type="text" id="player-name" placeholder="Your Name">
+                       <button id="submit-name">Submit</button>
+                     </div>
+                   </div>
+                  <div id="leaderboard">
+                     <div id="top-five-players">
+                        <div class="player-entry" id="player1">
+                          <div class="player-name" id="playername1"></div>
+                          <div class="player-score" id="playerscore1"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player2">
+                          <div class="player-name" id="playername2"></div>
+                          <div class="player-score" id="playerscore2"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player3">
+                          <div class="player-name" id="playername3"></div>
+                          <div class="player-score" id="playerscore3"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player4">
+                          <div class="player-name" id="playername4"></div>
+                          <div class="player-score" id="playerscore4"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player5">
+                          <div class="player-name" id="playername5"></div>
+                          <div class="player-score" id="playerscore5"></div>
+                        </div>
+                      </div>
+                      
+                      <div id="bottom-five-players">
+                        <div class="player-entry" id="player6">
+                          <div class="player-name" id="playername6"></div>
+                          <div class="player-score" id="playerscore6"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player7">
+                          <div class="player-name" id="playername7"></div>
+                          <div class="player-score" id="playerscore7"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player8">
+                          <div class="player-name" id="playername8"></div>
+                          <div class="player-score" id="playerscore8"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player9">
+                          <div class="player-name" id="playername9"></div>
+                          <div class="player-score" id="playerscore9"></div>
+                        </div>
+                      
+                        <div class="player-entry" id="player10">
+                          <div class="player-name" id="playername10"></div>
+                          <div class="player-score" id="playerscore10"></div>
+                        </div>
+                     </div>
+                   </div>
+                   
+
+                  <!-- Pipes go here! -->
+               </div>
+            </div>
+            <div id="land" class="animated"><div id="debug"></div></div>
+         </div>
+      </div>
+      <div class="boundingbox" id="playerbox"></div>
+      <div class="boundingbox" id="pipebox"></div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.transit.min.js"></script>
+      <script src="js/buzz.min.js"></script>
+      <script type="module" src="js/main.js"></script>
+
+   </body>
+</html>
